@@ -35,7 +35,12 @@
 
 (setq el-get-sources
       '((:name solarized-theme
-	 :after (load-theme 'solarized-dark t))))
+	 :after (load-theme 'solarized-dark t))
+
+	(:name ace-jump-mode
+	 :after (progn
+		  (define-key global-map (kbd "C-q") 'ace-jump-mode)
+		  (define-key global-map (kbd "C-Q") 'ace-jump-char-mode)))))
 
 (setq my-packages
       (append
@@ -44,3 +49,8 @@
 
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
+
+;; Tramp for ssh:// sudo:/ and the like
+(require 'tramp)
+;; ??? utf-8 support or something
+(require 'iso-transl)
