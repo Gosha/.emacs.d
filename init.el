@@ -5,6 +5,9 @@
 ;; Don't show the silly start screen
 (setq inhibit-startup-screen t)
 
+;; Show matching parens
+(show-paren-mode t)
+
 ;; No Tool bar, but I kind of like the other bars
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
@@ -58,3 +61,8 @@
 ;; Load more custom files
 (add-to-list 'load-path user-emacs-directory)
 (require 'defuns)
+(require 'keybinds)
+
+;; IDO
+(ido-mode t)
+(setq ido-enable-flex-matching t)
