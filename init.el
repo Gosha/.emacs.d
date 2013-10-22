@@ -101,7 +101,7 @@
 
 (setq my-packages
       (append
-       '(el-get lua-mode)
+       '(el-get lua-mode markdown-mode)
        (mapcar 'el-get-source-name el-get-sources)))
 
 (el-get-cleanup my-packages)
