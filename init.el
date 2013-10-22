@@ -20,3 +20,27 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
+
+;; I want spaces for indentation
+; (setq-default indent-tabs-mode nil)
+
+;; Set up el-get
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (let (el-get-master-branch)
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
+
+(setq el-get-sources
+      '((:name solarized-theme
+	 :after (load-theme 'solarized-dark t))))
+
+(setq my-packages
+      (append
+       '(el-get)
+       (mapcar 'el-get-source-name el-get-sources)))
+
+(el-get-cleanup my-packages)
+(el-get 'sync my-packages)

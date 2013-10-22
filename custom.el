@@ -5,9 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(ac-trigger-key "TAB")
  '(ac-use-fuzzy t)
-;; '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(auto-indent-next-pair-timer-geo-mean (quote ((default 0.0005 0))))
-)
+ '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
