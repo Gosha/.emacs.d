@@ -11,6 +11,16 @@
 ;; Delete marked region when typing
 (pending-delete-mode t)
 
+(setq password-cache-expiry nil) ; ?? Probably tramp
+
+;; Damn warning
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
+(setq scroll-conservatively 5) ; Scroll more smoothly
+(setq scroll-margin 0)         ; Start scrolling when pointer approaches the edge
+(setq scroll-error-top-bottom 'true) ; Don't signal an error when trying to scroll to beggining or end of buffer
+
 ;; No Tool bar, but I kind of like the other bars
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
@@ -30,6 +40,22 @@
 ;; I want spaces for indentation
 ; (setq-default indent-tabs-mode nil)
 
+
+
+;; Tramp for ssh:// sudo:/ and the like
+(require 'tramp)
+;; ??? utf-8 support or something
+(require 'iso-transl)
+
+;; Load more custom files
+(add-to-list 'load-path user-emacs-directory)
+(require 'defuns)
+(require 'keybinds)
+
+;; IDO
+(ido-mode t)
+(setq ido-enable-flex-matching t)
+
 ;; Set up el-get
 (add-to-list 'load-path
 	     (expand-file-name "el-get/el-get/" user-emacs-directory))
@@ -48,26 +74,26 @@
 	(:name ace-jump-mode
 	 :after (progn
 		  (define-key global-map (kbd "C-q") 'ace-jump-mode)
-		  (define-key global-map (kbd "C-Q") 'ace-jump-char-mode)))))
+		  (define-key global-map (kbd "C-Q") 'ace-jump-char-mode)))
+	(:name ido-ubiquitous
+	 :after (ido-ubiquitous-mode t))
+
+	(:name undo-tree
+	 :after (global-set-key (kbd "C-z") 'undo))
+
+	(:name magit
+	 :after (global-set-key (kbd "<f12>") 'magit-status))
+
+	(:name lua-block
+	 :after (progn
+		  (require 'lua-block)
+		  (lua-block-mode t)))
+	))
 
 (setq my-packages
       (append
-       '(el-get magit)
+       '(el-get lua-mode)
        (mapcar 'el-get-source-name el-get-sources)))
 
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
-
-;; Tramp for ssh:// sudo:/ and the like
-(require 'tramp)
-;; ??? utf-8 support or something
-(require 'iso-transl)
-
-;; Load more custom files
-(add-to-list 'load-path user-emacs-directory)
-(require 'defuns)
-(require 'keybinds)
-
-;; IDO
-(ido-mode t)
-(setq ido-enable-flex-matching t)
