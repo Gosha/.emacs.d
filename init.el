@@ -8,6 +8,9 @@
 ;; Show matching parens
 (show-paren-mode t)
 
+;; Delete marked region when typing
+(pending-delete-mode t)
+
 ;; No Tool bar, but I kind of like the other bars
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
@@ -28,6 +31,8 @@
 ; (setq-default indent-tabs-mode nil)
 
 ;; Set up el-get
+(add-to-list 'load-path
+	     (expand-file-name "el-get/el-get/" user-emacs-directory))
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
@@ -47,7 +52,7 @@
 
 (setq my-packages
       (append
-       '(el-get)
+       '(el-get magit)
        (mapcar 'el-get-source-name el-get-sources)))
 
 (el-get-cleanup my-packages)
