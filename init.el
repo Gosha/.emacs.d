@@ -13,13 +13,16 @@
 
 (setq password-cache-expiry nil) ; ?? Probably tramp
 
-;; Damn warning
+;; Damn warnings
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
 (setq scroll-conservatively 5) ; Scroll more smoothly
 (setq scroll-margin 0)         ; Start scrolling when pointer approaches the edge
 (setq scroll-error-top-bottom 'true) ; Don't signal an error when trying to scroll to beggining or end of buffer
+
+; I want spaces for indentation
+(setq-default indent-tabs-mode nil)
 
 ;; No Tool bar, but I kind of like the other bars
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -88,6 +91,12 @@
 	 :after (progn
 		  (require 'lua-block)
 		  (lua-block-mode t)))
+
+	(:name dired-details
+	 :after (progn
+		  (setq-default dired-details-hidden-string "--- ")
+		  (dired-details-install)))
+
 	))
 
 (setq my-packages
