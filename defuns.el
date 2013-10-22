@@ -15,4 +15,25 @@
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 
+;; Shuffling lines around
+(defun move-line-down ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines 1))
+    (forward-line)
+    (move-to-column col)))
+
+(defun move-line-up ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines -1))
+    (move-to-column col)))
+
+(global-set-key (kbd "<C-S-down>") 'move-line-down)
+(global-set-key (kbd "<C-S-up>") 'move-line-up)
+
 (provide 'defuns)
