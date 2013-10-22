@@ -54,3 +54,7 @@
 (require 'tramp)
 ;; ??? utf-8 support or something
 (require 'iso-transl)
+
+;; Load more custom files
+(add-to-list 'load-path user-emacs-directory)
+(require 'defuns)
