@@ -71,8 +71,9 @@
       (eval-print-last-sexp))))
 
 (setq el-get-sources
-      '((:name solarized-theme
-	 :after (load-theme 'solarized-dark t))
+      '((:name color-theme-almost-monokai
+         :after (color-theme-almost-monokai))
+
 
 	(:name ace-jump-mode
 	 :after (progn
