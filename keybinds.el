@@ -1,9 +1,6 @@
 ;; Easy navigation between windows
-(global-set-key (kbd "<M-S-left>")  'windmove-left)
-(global-set-key (kbd "<M-S-right>") 'windmove-right)
-(global-set-key (kbd "<M-S-up>")    'windmove-up)
-(global-set-key (kbd "<M-S-down>")  'windmove-down)
-
+;; Navigate windows with M-<arrows>
+(windmove-default-keybindings 'meta)
 
 ;; revert-buffer without confirmation on
 (global-set-key (kbd "C-ö r")
@@ -21,5 +18,11 @@
 
 (global-set-key (kbd "M-b") 'ibuffer) ; Show pretty list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer) ; Show pretty list of buffers
+
+(global-set-key (kbd "<backtab>") 'dabbrev-expand)
+
+;; From defuns.el
+(global-set-key (kbd "<C-S-down>") 'move-line-down)
+(global-set-key (kbd "<C-S-up>") 'move-line-up)
 
 (provide 'keybinds)

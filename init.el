@@ -24,6 +24,9 @@
 ; I want spaces for indentation
 (setq-default indent-tabs-mode nil)
 
+;; Use the clipboard, pretty please, so that copy/paste "works"
+(setq x-select-enable-clipboard t)
+
 ;; No Tool bar, but I kind of like the other bars
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
@@ -43,12 +46,16 @@
 ;; I want spaces for indentation
 ; (setq-default indent-tabs-mode nil)
 
-
+;; Undo window modifications with C-c <left/right>
+(winner-mode 1)
 
 ;; Tramp for ssh:// sudo:/ and the like
 (require 'tramp)
 ;; ??? utf-8 support or something
 (require 'iso-transl)
+
+;; C-x C-j opens dired with the cursor right on the file you're editing
+(require 'dired-x)
 
 ;; Load more custom files
 (add-to-list 'load-path user-emacs-directory)
@@ -82,6 +89,13 @@
 	(:name ido-ubiquitous
 	 :after (ido-ubiquitous-mode t))
 
+        (:name buffer-move
+          :after (progn
+                   (global-set-key (kbd "<C-S-up>") 'buf-move-up)
+                   (global-set-key (kbd "<C-S-down>") 'buf-move-down)
+                   (global-set-key (kbd "<C-S-left>") 'buf-move-left)
+                   (global-set-key (kbd "<C-S-right>") 'buf-move-right)))
+
 	(:name undo-tree
 	 :after (global-set-key (kbd "C-z") 'undo))
 
@@ -102,7 +116,11 @@
 
 (setq my-packages
       (append
-       '(el-get lua-mode markdown-mode)
+       '(el-get
+         lua-mode markdown-mode
+         php-mode-improved
+         color-theme-solarized
+         )
        (mapcar 'el-get-source-name el-get-sources)))
 
 (el-get-cleanup my-packages)
