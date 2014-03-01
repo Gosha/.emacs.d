@@ -124,6 +124,8 @@
                   (global-set-key (kbd "M-X") 'smex-major-mode-commands)
                   ;; This is your old M-x.
                   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
+        (:name auctex
+         :after (setq TeX-PDF-mode t))
 	))
 
 (setq my-packages
