@@ -1,0 +1,5 @@
+(:name smartscan
+       :website "https://github.com/mickeynp/smart-scan"
+       :description "Quickly jumps between other symbols found at point in Emacs."
+       :type github
+       :pkgname "mickeynp/smart-scan")

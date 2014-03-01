@@ -77,6 +77,8 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
+(add-to-list 'el-get-recipe-path "~/.emacs.d/user-recipes")
+
 (setq el-get-sources
       '((:name color-theme-almost-monokai
          :after ;(color-theme-almost-monokai))
@@ -126,6 +128,8 @@
                   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
         (:name auctex
          :after (setq TeX-PDF-mode t))
+        (:name smartscan
+         :after (global-smartscan-mode 1))
 	))
 
 (setq my-packages
@@ -140,6 +144,7 @@
          ;; skewer-mode                 ; Provides live interaction with JavaScript,
                                         ; CSS, and HTML in a web browser
          csharp-mode
+         smartscan
          )
        (mapcar 'el-get-source-name el-get-sources)))
 
