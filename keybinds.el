@@ -1,6 +1,11 @@
 ;; Easy navigation between windows
 ;; Navigate windows with M-<arrows>
 (windmove-default-keybindings 'meta)
+(global-set-key (kbd "<M-S-left>")  'windmove-left)
+(global-set-key (kbd "<M-S-right>") 'windmove-right)
+(global-set-key (kbd "<M-S-up>")    'windmove-up)
+(global-set-key (kbd "<M-S-down>")  'windmove-down)
+
 
 ;; revert-buffer without confirmation on
 (global-set-key (kbd "C-ö r")
