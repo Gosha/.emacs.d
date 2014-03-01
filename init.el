@@ -134,6 +134,12 @@
          lua-mode markdown-mode
          php-mode-improved
          color-theme-solarized
+         ;; clojure-mode
+         ;; nrepl                       ; Requires epl
+         web-mode
+         ;; skewer-mode                 ; Provides live interaction with JavaScript,
+                                        ; CSS, and HTML in a web browser
+         csharp-mode
          )
        (mapcar 'el-get-source-name el-get-sources)))
 
