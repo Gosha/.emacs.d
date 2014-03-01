@@ -79,7 +79,8 @@
 
 (setq el-get-sources
       '((:name color-theme-almost-monokai
-         :after (color-theme-almost-monokai))
+         :after ;(color-theme-almost-monokai))
+         )
 
 
 	(:name ace-jump-mode
