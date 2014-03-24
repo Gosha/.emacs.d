@@ -145,6 +145,8 @@
                                         ; CSS, and HTML in a web browser
          csharp-mode
          smartscan
+         indent-guide                   ; Show current indentation graphically
+                                        ; (indent-guide-mode)
          )
        (mapcar 'el-get-source-name el-get-sources)))
 
