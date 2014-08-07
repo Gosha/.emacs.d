@@ -153,7 +153,7 @@
          web-mode
          ;; skewer-mode                 ; Provides live interaction with JavaScript,
                                         ; CSS, and HTML in a web browser
-         csharp-mode
+         ;; csharp-mode
          smartscan
          indent-guide                   ; Show current indentation graphically
                                         ; (indent-guide-mode)
