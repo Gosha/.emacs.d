@@ -130,6 +130,16 @@
          :after (setq TeX-PDF-mode t))
         (:name smartscan
          :after (global-smartscan-mode 1))
+        (:name mmm-mode
+         :after (progn
+                  (require 'mmm-mode)
+                  (setq mmm-global-mode 'maybe)
+                  (dolist (item '("\\.phtml\\'" "\\.php[s34]?\\'"))
+                    (add-to-list
+                     'auto-mode-alist
+                     (cons item 'html-mode))
+                    (mmm-add-mode-ext-class
+                     'html-mode item 'html-php))))
 	))
 
 (setq my-packages
