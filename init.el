@@ -15,7 +15,10 @@
 
 ;; Damn warnings
 (put 'narrow-to-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
+(put 'narrow-to-defun  'disabled nil)
+(put 'narrow-to-page   'disabled nil)
+(put 'upcase-region    'disabled nil)
+
 
 (setq scroll-conservatively 5) ; Scroll more smoothly
 (setq scroll-margin 0)         ; Start scrolling when pointer approaches the edge
