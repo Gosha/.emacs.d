@@ -41,6 +41,10 @@
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
 
+;;; Org-mode
+;; Use Monday as starting day when picking a date in calendar
+(setq calendar-week-start-day 1)
+
 ;; Save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
