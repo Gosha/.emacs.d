@@ -213,6 +213,8 @@
 
 (eval-after-load "tex"
   '(add-to-list 'TeX-command-list '("Make" "make" TeX-run-TeX nil t)))
+
+(define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 (add-hook 'c-mode-common-hook
   (lambda()
     (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
