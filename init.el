@@ -148,12 +148,9 @@
          :after (progn
                   (require 'mmm-mode)
                   (setq mmm-global-mode 'maybe)
-                  (dolist (item '("\\.phtml\\'" "\\.php[s34]?\\'"))
-                    (add-to-list
-                     'auto-mode-alist
-                     (cons item 'html-mode))
+                  (dolist (item '(html-php html-css html-js))
                     (mmm-add-mode-ext-class
-                     'html-mode item 'html-php))))
+                     'html-mode nil item))))
         (:name flycheck
          :after (progn
                   (add-hook 'c-mode-hook 'flycheck-mode)))
