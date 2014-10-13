@@ -178,6 +178,8 @@
                                         ; (indent-guide-mode)
          ;; haskell-mode
          yaml-mode
+         iedit
+         ibuffer-vc
          )
        (mapcar 'el-get-source-name el-get-sources)))
 
