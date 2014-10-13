@@ -154,6 +154,9 @@
                      (cons item 'html-mode))
                     (mmm-add-mode-ext-class
                      'html-mode item 'html-php))))
+        (:name flycheck
+         :after (progn
+                  (add-hook 'c-mode-hook 'flycheck-mode)))
         (:name web-mode
          :after (dolist (item '("\\.html?" "\\.phtml\\'" "\\.php[s34]?\\'"))
                   (add-to-list
