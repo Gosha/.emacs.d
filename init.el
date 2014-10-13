@@ -210,6 +210,9 @@
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 
 (load-theme 'solarized-dark t)
+
+(eval-after-load "tex"
+  '(add-to-list 'TeX-command-list '("Make" "make" TeX-run-TeX nil t)))
 (add-hook 'c-mode-common-hook
   (lambda()
     (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
