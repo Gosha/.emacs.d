@@ -102,8 +102,7 @@
         ; )
 	(:name ace-jump-mode
 	 :after (progn
-		  (define-key global-map (kbd "C-q") 'ace-jump-mode)
-		  (define-key global-map (kbd "C-Q") 'ace-jump-char-mode)))
+		  (define-key global-map (kbd "C-Q") 'ace-jump-word-mode)))
 	(:name ido-ubiquitous
 	 :after (ido-ubiquitous-mode t))
 
