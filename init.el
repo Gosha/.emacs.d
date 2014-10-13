@@ -162,6 +162,11 @@
                   (add-to-list
                    'auto-mode-alist
                    (cons item 'web-mode))))
+        (:name guide-key
+         :after (progn
+                  (setq guide-key/guide-key-sequence '("C-x" "C-c"))
+                  (setq guide-key/recursive-key-sequence-flag t)
+                  (guide-key-mode 1)))
         (:name company-mode
          :after (progn
                   (add-hook 'after-init-hook 'global-company-mode)))
