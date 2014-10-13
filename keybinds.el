@@ -37,4 +37,7 @@
 
 (global-set-key (kbd "<f11>") 'recompile)
 
+;; C-q is bound to 'ace-jump-char-mode
+(global-set-key (kbd "C-c C-q")  'quoted-insert)
+
 (provide 'keybinds)
