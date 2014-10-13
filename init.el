@@ -188,3 +188,6 @@
 (el-get 'sync my-packages)
 
 (load-theme 'solarized-dark t)
+(add-hook 'c-mode-common-hook
+  (lambda()
+    (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
