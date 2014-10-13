@@ -154,6 +154,11 @@
                      (cons item 'html-mode))
                     (mmm-add-mode-ext-class
                      'html-mode item 'html-php))))
+        (:name web-mode
+         :after (dolist (item '("\\.html?" "\\.phtml\\'" "\\.php[s34]?\\'"))
+                  (add-to-list
+                   'auto-mode-alist
+                   (cons item 'web-mode))))
 	))
 
 (setq my-packages
@@ -164,7 +169,6 @@
          color-theme-solarized
          ;; clojure-mode
          ;; nrepl                       ; Requires epl
-         web-mode
          ;; skewer-mode                 ; Provides live interaction with JavaScript,
                                         ; CSS, and HTML in a web browser
          ;; csharp-mode
