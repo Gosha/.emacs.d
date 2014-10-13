@@ -18,6 +18,8 @@
  '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 100 :width normal))))
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow")))))
+ '(web-mode-html-tag-custom-face ((t (:foreground "Snow4"))) t)
+ '(web-mode-html-tag-face ((t (:inherit font-lock-variable-name-face))) t)
  '(wg-divider-face ((t (:foreground "light sky blue")))))
 ; '(flymake-errline ((((class color)) (:underline "red"))) t)
 ; '(flymake-warnline ((((class color)) (:underline "yellow"))) t)
