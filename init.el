@@ -159,6 +159,10 @@
                   (add-to-list
                    'auto-mode-alist
                    (cons item 'web-mode))))
+        (:name workgroups
+         :after (progn
+                  (setq wg-prefix-key (kbd "C-c w"))
+                  (workgroups-mode 1)))
 	))
 
 (setq my-packages
