@@ -35,4 +35,6 @@
 (global-set-key (kbd "<C-S-down>") 'move-line-down)
 (global-set-key (kbd "<C-S-up>") 'move-line-up)
 
+(global-set-key (kbd "<f11>") 'recompile)
+
 (provide 'keybinds)
