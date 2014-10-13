@@ -164,7 +164,8 @@
 (setq my-packages
       (append
        '(el-get
-         lua-mode markdown-mode
+         lua-mode
+         markdown-mode
          php-mode-improved
          color-theme-solarized
          ;; clojure-mode
