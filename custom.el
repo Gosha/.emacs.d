@@ -18,6 +18,7 @@
  '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 100 :width normal))))
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow")))))
+ '(wg-divider-face ((t (:foreground "light sky blue")))))
 ; '(flymake-errline ((((class color)) (:underline "red"))) t)
 ; '(flymake-warnline ((((class color)) (:underline "yellow"))) t)
 
