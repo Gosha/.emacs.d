@@ -159,6 +159,14 @@
                   (add-to-list
                    'auto-mode-alist
                    (cons item 'web-mode))))
+        (:name company-mode
+         :after (progn
+                  (add-hook 'after-init-hook 'global-company-mode)))
+        (:name company-c-headers
+         :after (progn
+                  (add-hook 'company-mode-hook
+                            (lambda ()
+                              (add-to-list 'company-backends 'company-c-headers)))))
         (:name workgroups
          :after (progn
                   (setq wg-prefix-key (kbd "C-c w"))
