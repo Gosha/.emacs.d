@@ -40,4 +40,7 @@
 ;; C-q is bound to 'ace-jump-char-mode
 (global-set-key (kbd "C-c C-q")  'quoted-insert)
 
+;; Shift + scroll to change font size
+(global-set-key [S-mouse-4] 'text-scale-increase)
+(global-set-key [S-mouse-5] 'text-scale-decrease)
 (provide 'keybinds)
