@@ -9,6 +9,8 @@
  '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(diff-switches "-u")
  '(dired-dwim-target t)
+ '(eclim-eclipse-dirs (quote ("/home/gosha/make/eclipse" "/Applications/eclipse" "/usr/lib/eclipse" "/usr/local/lib/eclipse" "/usr/share/eclipse")))
+ '(eclim-executable "/home/gosha/make/eclipse/eclim")
  '(wg-morph-hsteps 40)
  '(wg-morph-vsteps 40))
 
