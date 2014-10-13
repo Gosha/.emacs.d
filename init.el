@@ -187,4 +187,4 @@
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
 
-(color-theme-solarized-dark)
+(load-theme 'solarized-dark t)
