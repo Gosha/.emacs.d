@@ -207,6 +207,8 @@
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
 
+(add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
+
 (load-theme 'solarized-dark t)
 (add-hook 'c-mode-common-hook
   (lambda()
