@@ -176,7 +176,7 @@
          smartscan
          indent-guide                   ; Show current indentation graphically
                                         ; (indent-guide-mode)
-         haskell-mode
+         ;; haskell-mode
          )
        (mapcar 'el-get-source-name el-get-sources)))
 
