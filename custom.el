@@ -15,9 +15,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 100 :width normal))))
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow")))))
+ '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "xos4" :family "Terminus"))))
  '(flyspell-duplicate ((t (:inherit unspecified :foreground "default" :underline "chocolate3"))) t)
  '(flyspell-incorrect ((t (:inherit unspecified :foreground "default" :underline "firebrick"))) t)
  '(web-mode-html-tag-custom-face ((t (:foreground "Snow4"))) t)
