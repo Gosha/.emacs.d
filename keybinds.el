@@ -27,7 +27,6 @@
 (global-set-key (kbd "M-s") 'other-window) ; cursor to other pane
 (global-set-key (kbd "M-0") 'delete-window) ; close current pane
 
-(global-set-key (kbd "M-b") 'ibuffer) ; Show pretty list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer) ; Show pretty list of buffers
 
 (global-set-key (kbd "<backtab>") 'dabbrev-expand)
