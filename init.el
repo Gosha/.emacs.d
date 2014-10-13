@@ -96,11 +96,10 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/user-recipes")
 
 (setq el-get-sources
-      '((:name color-theme-almost-monokai
-         :after ;(color-theme-almost-monokai))
-         )
-
-
+      '(
+        ;(:name color-theme-almost-monokai
+        ; :after ;(color-theme-almost-monokai))
+        ; )
 	(:name ace-jump-mode
 	 :after (progn
 		  (define-key global-map (kbd "C-q") 'ace-jump-mode)
