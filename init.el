@@ -178,6 +178,7 @@
                                         ; (indent-guide-mode)
          ;; haskell-mode
          yaml-mode
+         apache-mode
          iedit
          ibuffer-vc
          )
