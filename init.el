@@ -164,6 +164,8 @@
                   (setq guide-key/guide-key-sequence '("C-x" "C-c"))
                   (setq guide-key/recursive-key-sequence-flag t)
                   (guide-key-mode 1)))
+        (:name neotree
+         :after (global-set-key [f8] 'neotree-toggle))
         (:name company-mode
          :after (progn
                   (add-hook 'after-init-hook 'global-company-mode)))
