@@ -11,6 +11,9 @@
 ;; Delete marked region when typing
 (pending-delete-mode t)
 
+;; I don't use double spaces at the end of a sentence
+(setq sentence-end-double-space nil)
+
 (setq password-cache-expiry nil) ; ?? Probably tramp
 
 ;; Damn warnings
