@@ -50,6 +50,7 @@
    apache-mode
    iedit
    ibuffer-vc
+   muttrc-mode
    ))
 
 (provide 'el-get-common)
