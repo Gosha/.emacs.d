@@ -16,3 +16,7 @@
        "meronpan\\|cookie"
        system-name)
   (do-el-get))
+
+;; After el-gets
+(when (string-match-p "cookie" system-name)
+  (require 'cookie))
