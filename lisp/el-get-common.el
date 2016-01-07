@@ -51,6 +51,7 @@
    iedit
    ibuffer-vc
    muttrc-mode
+   any-ini-mode
    ))
 
 (provide 'el-get-common)
