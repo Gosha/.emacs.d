@@ -16,7 +16,9 @@
 	(:name undo-tree
 	 :after (global-set-key (kbd "C-z") 'undo))
 	(:name magit
-	 :after (global-set-key (kbd "<f12>") 'magit-status))
+         :after (progn
+                  (autoload 'magit-status "magit")
+                  (global-set-key (kbd "<f12>") 'magit-status)))
 	(:name dired-details
 	 :after (progn
 		  (setq-default dired-details-hidden-string "--- ")
