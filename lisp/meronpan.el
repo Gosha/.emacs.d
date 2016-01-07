@@ -1,6 +1,3 @@
-;; Pretty lambda
-
-
 (add-el-get-sources
  '(
    (:name lua-block
@@ -70,6 +67,7 @@
 (eval-after-load "tex"
   '(add-to-list 'TeX-command-list '("Make" "make" TeX-run-TeX nil t)))
 
+;; Pretty lambda
 (font-lock-add-keywords 'emacs-lisp-mode
                         '(("(\\(lambda\\)\\>" (0 (prog1 ()
                                               (compose-region (match-beginning 1)
