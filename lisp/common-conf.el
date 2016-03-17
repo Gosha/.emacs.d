@@ -77,4 +77,7 @@
   (lambda()
     (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 
+;; Change all yes-or-no-p to y-or-n-p
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (provide 'common-conf)
