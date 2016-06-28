@@ -36,13 +36,13 @@
     :after (progn
              (setq wg-prefix-key (kbd "C-c w"))
              (workgroups-mode 1)))
-   (:name eclim
-    :after (progn
-             ;; TODO : make it load only when company is loaded
-             (add-hook 'eclim-mode-hook
-                       (lambda ()
-                         (require 'company-emacs-eclim)
-                         (company-emacs-eclim-setup)))))
+   ;; (:name eclim
+   ;;  :after (progn
+   ;;           ;; TODO : make it load only when company is loaded
+   ;;           (add-hook 'eclim-mode-hook
+   ;;                     (lambda ()
+   ;;                       (require 'company-emacs-eclim)
+   ;;                       (company-emacs-eclim-setup)))))
    ))
 
 (add-el-get-packages 
