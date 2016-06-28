@@ -62,6 +62,11 @@
    pymacs
    ;; ropemacs
    ropemacs3
+   coffee-mode
+   restclient
+
+   scss-mode
+   elm-mode
    ))
 
 (eval-after-load "tex"
