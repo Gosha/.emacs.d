@@ -67,6 +67,20 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
+;; Display ido results vertically, rather than horizontally
+(setq ido-decorations
+      (quote ("\n-> "
+              ""
+              "\n   "
+              "\n   ..."
+              "["
+              "]"
+              " [No match]"
+              " [Matched]"
+              " [Not readable]"
+              " [Too big]"
+              " [Confirm]")))
+
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 
 ;; TODO: Move?
