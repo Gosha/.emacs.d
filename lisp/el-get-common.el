@@ -40,8 +40,8 @@
                   (add-to-list
                    'auto-mode-alist
                    (cons item 'web-mode))))
-        (:name color-theme-solarized
-         :after (load-theme 'solarized-dark t))
+        (:name base16
+               :after (load-theme 'base16-eighties-dark t))
    ))
 
 (add-el-get-packages
