@@ -80,4 +80,11 @@
 ;; Change all yes-or-no-p to y-or-n-p
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Define bigger faces for org
+;; could also use (((graphics t))) I think, I dunno
+;; Currently they're inherited in custom.el or something
+(defface bigger-org-levels
+  '((t :height 1.5))
+  "Make dem org outline levels slighlty bigger on X")
+
 (provide 'common-conf)
