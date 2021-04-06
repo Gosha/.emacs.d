@@ -58,16 +58,16 @@
 
 
 ;; Both command keys are 'Super'
-(setq mac-right-command-modifier 'super)
-(setq mac-command-modifier 'super)
+;(setq mac-right-command-modifier 'super)
+;(setq mac-command-modifier 'super)
 
 
 ;; Option or Alt is naturally 'Meta'
-(setq mac-option-modifier 'meta)
+;(setq mac-option-modifier 'meta)
 
 
 ;; Right Alt (option) can be used to enter symbols like em dashes '—' and euros '€' and stuff.
-(setq mac-right-option-modifier 'nil)
+;(setq mac-right-option-modifier 'nil)
 
 ;; Control is control, and you also need to change Caps Lock to Control in the Keyboard
 ;; preferences in macOS.
@@ -78,18 +78,19 @@
 
 
 ;; Smoother and nicer scrolling
-(setq scroll-margin 10
-   scroll-step 1
-   next-line-add-newlines nil
-   scroll-conservatively 10000
+(setq
+   scroll-margin 2
+;   scroll-step 1
+;   next-line-add-newlines nil
+;   scroll-conservatively 10000
    scroll-preserve-screen-position 1)
 
-(setq mouse-wheel-follow-mouse 't)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+;(setq mouse-wheel-follow-mouse 't)
+;(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 
 
 ;; Use ESC as universal get me out of here command
-(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+;(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 
 
 ;; Don't bother with auto save and backups.
@@ -114,10 +115,10 @@
  cursor-in-non-selected-windows t  ; Hide the cursor in inactive windows
 
  echo-keystrokes 0.1               ; Show keystrokes right away, don't show the message in the scratch buffer
- initial-scratch-message nil       ; Empty scratch buffer
- initial-major-mode 'org-mode      ; Org mode by default
+;initial-scratch-message nil       ; Empty scratch buffer
+;initial-major-mode 'org-mode      ; Org mode by default
  sentence-end-double-space nil     ; Sentences should end in one space, come on!
- confirm-kill-emacs 'y-or-n-p      ; y and n instead of yes and no when quitting
+;confirm-kill-emacs 'y-or-n-p      ; y and n instead of yes and no when quitting
  help-window-select t              ; Select help window so it's easy to quit it with 'q'
 )
 
@@ -127,16 +128,16 @@
 
 
 ;; We need Emacs kill ring and system clipboard to be independent. Simpleclip is the solution to that.
-(use-package simpleclip
-  :config
-  (simpleclip-mode 1))
+; (use-package simpleclip
+;   :config
+;   (simpleclip-mode 1))
 
 
 ;; Things you'd expect from macOS app.
-(global-set-key (kbd "s-s") 'save-buffer)             ;; save
-(global-set-key (kbd "s-S") 'write-file)              ;; save as
-(global-set-key (kbd "s-q") 'save-buffers-kill-emacs) ;; quit
-(global-set-key (kbd "s-a") 'mark-whole-buffer)       ;; select all
+;(global-set-key (kbd "s-s") 'save-buffer)             ;; save
+;(global-set-key (kbd "s-S") 'write-file)              ;; save as
+;(global-set-key (kbd "s-q") 'save-buffers-kill-emacs) ;; quit
+;(global-set-key (kbd "s-a") 'mark-whole-buffer)       ;; select all
 ;; (global-set-key (kbd "s-z") 'undo)
 
 
@@ -156,8 +157,8 @@
           undo-tree-visualizer-timestamps t
           undo-tree-visualizer-diff t)))
 
-(global-set-key (kbd "s-z") 'undo-tree-undo)
-(global-set-key (kbd "s-Z") 'undo-tree-redo)
+(global-set-key (kbd "C-z") 'undo-tree-undo)
+(global-set-key (kbd "C-M-z") 'undo-tree-redo)
 
 
 ;; =======
@@ -165,19 +166,21 @@
 
 
 ;; Enable transparent title bar on macOS
-(when (memq window-system '(mac ns))
-  (add-to-list 'default-frame-alist '(ns-appearance . light)) ;; {light, dark}
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
+;; (when (memq window-system '(mac ns))
+;;   (add-to-list 'default-frame-alist '(ns-appearance . light)) ;; {light, dark}
+;;   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
 
 
 ;; Font
-(when (member "menlo" (font-family-list))
-  (set-face-attribute 'default nil :font "Menlo 15"))
-(setq-default line-spacing 2)
+;; (when (member "menlo" (font-family-list))
+;;   (set-face-attribute 'default nil :font "Menlo 15"))
+;; (setq-default line-spacing 2)
 
 
 ;; Nice and simple default light theme.
-(load-theme 'tsdh-light)
+(use-package material-theme
+  :config
+  (load-theme 'material))
 
 
 ;; Pretty icons
@@ -215,8 +218,8 @@
 
 
 ;; Set colors to distinguish between active and inactive windows
-(set-face-attribute 'mode-line nil :background "SlateGray1")
-(set-face-attribute 'mode-line-inactive nil :background "grey93")
+(set-face-attribute 'mode-line nil :background "Brightblack")
+(set-face-attribute 'mode-line-inactive nil :background "black")
 
 
 ;; File tree
@@ -348,9 +351,8 @@ point reaches the beginning or end of the buffer, stop there."
         (setq mark-ring (nbutlast mark-ring))
         (goto-char (marker-position (car (last mark-ring))))))
 
-(global-set-key (kbd "s-,") 'my-pop-local-mark-ring)
-(global-set-key (kbd "s-.") 'unpop-to-mark-command)
-
+(global-set-key (kbd "M-,") 'my-pop-local-mark-ring)
+(global-set-key (kbd "M-.") 'unpop-to-mark-command)
 
 ;; Same keys with Shift will move you back and forward between open buffers.
 (global-set-key (kbd "s-<") 'previous-buffer)
@@ -364,8 +366,8 @@ point reaches the beginning or end of the buffer, stop there."
 ;; Expand-region allows to gradually expand selection inside words, sentences, expressions, etc.
 (use-package expand-region
   :config
-  (global-set-key (kbd "s-'") 'er/expand-region)         ;; Cmd+' (apostrophe) to expand
-  (global-set-key (kbd "s-\"") 'er/contract-region))     ;; Cmd+" (same, but with shift) to contract
+  (global-set-key (kbd "M-=") 'er/expand-region)         ;; Cmd+' (apostrophe) to expand
+  (global-set-key (kbd "M-]") 'er/contract-region))      ;; Cmd+" (same, but with shift) to contract
 
 
 ;; Move-text lines around with meta-up/down.
@@ -400,7 +402,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 
 ;; Comment line or region.
-(global-set-key (kbd "s-/") 'comment-line)
+(global-set-key (kbd "C-c c") 'comment-line)
 
 
 ;; Visually find and replace text
@@ -414,9 +416,9 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package multiple-cursors
   :config
   (setq mc/always-run-for-all 1)
-  (global-set-key (kbd "s-d") 'mc/mark-next-like-this)        ;; Cmd+d select next occurrence of region
-  (global-set-key (kbd "s-D") 'mc/mark-all-dwim)              ;; Cmd+Shift+d select all occurrences
-  (global-set-key (kbd "M-s-d") 'mc/edit-beginnings-of-lines) ;; Alt+Cmd+d add cursor to each line in region
+  (global-set-key (kbd "M-d") 'mc/mark-next-like-this)        ;; Cmd+d select next occurrence of region
+  (global-set-key (kbd "C-M-d") 'mc/mark-all-dwim)            ;; Cmd+Shift+d select all occurrences
+  (global-set-key (kbd "C-c d") 'mc/edit-beginnings-of-lines) ;; Alt+Cmd+d add cursor to each line in region
   (define-key mc/keymap (kbd "<return>") nil))
 
 
@@ -426,8 +428,8 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; This is rather radical, but saves from a lot of pain in the ass.
 ;; When split is automatic, always split windows vertically
-(setq split-height-threshold 0)
-(setq split-width-threshold nil)
+;(setq split-height-threshold 0)
+;(setq split-width-threshold nil)
 
 
 ;; Go to other windows easily with one keystroke Cmd-something.
@@ -587,41 +589,41 @@ point reaches the beginning or end of the buffer, stop there."
 
 
 ;; Spellchecking requires an external command to be available. Install aspell on your Mac, then make it the default checker for Emacs' ispell. Note that personal dictionary is located at ~/.aspell.LANG.pws by default.
-(setq ispell-program-name "aspell")
+;(setq ispell-program-name "aspell")
 
 
 ;; Popup window for spellchecking
-(use-package flyspell-correct)
-(use-package flyspell-correct-popup)
+; (use-package flyspell-correct)
+; (use-package flyspell-correct-popup)
 
 
 ;; Enable spellcheck on the fly for all text modes. This includes org, latex and LaTeX.
-(add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+; (add-hook 'text-mode-hook 'flyspell-mode)
+; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 
 ;; Enable right mouse click on macOS to see the list of suggestions.
-(eval-after-load "flyspell"
-  '(progn
-     (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
-     (define-key flyspell-mouse-map [mouse-3] #'undefined)))
+;; (eval-after-load "flyspell"
+;;   '(progn
+;;      (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
+;;      (define-key flyspell-mouse-map [mouse-3] #'undefined)))
 
 
 ;; Spellcheck current word
-(define-key flyspell-mode-map (kbd "s-\\") 'flyspell-correct-previous-word-generic) ;; Cmd+\ spellcheck word with popup
-(define-key flyspell-mode-map (kbd "C-s-\\") 'ispell-word)                          ;; Ctrl+Cmd+\ spellcheck word using built UI
+;; (define-key flyspell-mode-map (kbd "s-\\") 'flyspell-correct-previous-word-generic) ;; Cmd+\ spellcheck word with popup
+;; (define-key flyspell-mode-map (kbd "C-s-\\") 'ispell-word)                          ;; Ctrl+Cmd+\ spellcheck word using built UI
 
 
 ;; Search for synonyms
-(use-package powerthesaurus
-  :config
-  (global-set-key (kbd "s-|") 'powerthesaurus-lookup-word-dwim)) ;; Cmd+Shift+\ search thesaurus
+;; (use-package powerthesaurus
+;;   :config
+;;   (global-set-key (kbd "s-|") 'powerthesaurus-lookup-word-dwim)) ;; Cmd+Shift+\ search thesaurus
 
 
 ;; Word definition search
-(use-package define-word
-  :config
-  (global-set-key (kbd "M-\\") 'define-word-at-point))
+;; (use-package define-word
+;;   :config
+;;   (global-set-key (kbd "M-\\") 'define-word-at-point))
 
 
 ;; ===========
